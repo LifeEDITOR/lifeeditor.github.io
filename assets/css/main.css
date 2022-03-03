@@ -2659,7 +2659,7 @@ letter-spacing: 1px;
     z-index: -10;
     background-position: center;
     background-size: cover;
-    
+
 }
 .latest-news-overlay{
     position: absolute;
@@ -3008,6 +3008,25 @@ font-size: 25px;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, .06);
 }
+.story{
+  border-style: solid;
+  border-width: 2.5px;
+  border-radius: 50%;
+  border-color: rgb(106, 146, 246);
+  transform: scale(1.17,1.17);
+
+}
+.story_live{
+  border-style: solid;
+  border-width: 2.65px;
+  border-radius: 50%;
+  border-color: rgb(235, 64, 52);
+  transform: scale(1.17,1.17);
+
+  animation: live 1.8s infinite;
+  transition: all 0.3s ease-in 0s;
+
+}
 .channels-btn img{
   background-repeat: no-repeat!important;
     background-position: center!important;
@@ -3025,8 +3044,8 @@ font-size: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1000;
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing:0px;
     color: rgba(0, 0, 0, .15);
     font-weight: bold;
 }
@@ -3038,8 +3057,11 @@ font-size: 25px;
   height: 5px;
 }
 .channels-btn .verified img{
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
+}
+.channels-btn .verified span{
+  transform: translate(-7px,-7.25px);
 }
 .latest-video-share{
     position: absolute;
