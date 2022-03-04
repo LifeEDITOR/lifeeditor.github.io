@@ -3057,8 +3057,8 @@ font-size: 25px;
   height: 5px;
 }
 .channels-btn .verified img{
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
 }
 .channels-btn .verified span{
   transform: translate(-7px,-7.25px);
@@ -3084,4 +3084,9 @@ font-size: 25px;
 }
 .ty-1{
   transform: translateY(1px);
+}
+.ohidden{
+    overflow: hidden!important;
+    overflow-y: hidden!important;
+    overflow-x: hidden!important;
 }
