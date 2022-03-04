@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/animate.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link rel="stylesheet" href="assets/css/slick.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="https://kit.fontawesome.com/f2685a97ac.js" crossorigin="anonymous"></script>
     <style type="text/css">
@@ -50,11 +51,27 @@
        
       </div> -->
        <div class="my-loader p-0 m-0 text-center justify-content-center">
-        	<i class='lni lni-is-spinning lni-spinner' style="color: #4169e1; font-size: 22px; margin-top: 100px;"></i>
+        	<i class='lni lni-is-spinning lni-spinner' style="color: #4169e1; font-size: 22px; margin-top: 100px; transition: .4s;"></i>
         </div>
     </div>
 	<!-- preloader end -->
-
+<div class="bg-white d-none" id="story_screen" style="width: 100vw; height: 100vh; overflow: hidden;">
+<div data-slide="slide" class="slide " >
+    
+    	<div class="slide-items">
+      <img src="https://source.unsplash.com/V7IJzp_ElQc/1000x1500" alt="Img 1">
+      <img src="https://source.unsplash.com/GJIc8O6sM5M/1000x1500" alt="Img 2">
+      <img src="https://source.unsplash.com/VlMMBxSZuSI/1000x1500" alt="Img 3">
+      <img src="https://source.unsplash.com/xWEHhKYqdlY/1000x1500" alt="Img 4">
+    </div>
+    <nav class="slide-nav">
+      <div class="slide-thumb"></div>
+      <button class="slide-prev">Prev</button>
+      <button class="slide-next">Next</button>
+    </nav>
+    
+</div>
+</div>
 
 <div class="slider-active">
 <div class="single_slider">
@@ -134,36 +151,36 @@
 	<div class="container p-0 m-0">
 		<div class="row p-0 m-0">
 			<div class="hidden-lg mx-auto p-3 scrollbar-no" style="overflow-x: scroll; white-space: nowrap;">
-					<a href="#" class="channels-btn channels-btn_active me-2 ms-2">
+					<a href="#" class="channels-btn channels-btn_active me-2 ms-2" onclick="story()">
 						<img src="assets/images/myimages/channels/skysports.png" class="" id="story_image">
 							<div class="verified"><img src="assets/images/myimages/channels/verified.png" class="" style="z-index: 10;"></div>
-						<div class="story_live w-100 h-100">
+						<div class="story_live w-100 h-100" id="story">
 						</div>
 					</a>
 
 					<a href="#" class="channels-btn me-2">
-						<img src="assets/images/myimages/channels/nbcsports.png" class="">
+						<img src="assets/images/myimages/channels/nbcsports.png" class="" onclick="story()">
 						<div class="verified"><img src="assets/images/myimages/channels/verified.png" class="" style="z-index: 10;"></div>
-						<div class="story_live w-100 h-100"></div>
+						<div class="story_live w-100 h-100" id="story"></div>
 					</a>
 
 					<a href="#" class="channels-btn me-2">
-						<img src="assets/images/myimages/channels/chempionat.png" class="">
+						<img src="assets/images/myimages/channels/chempionat.png" class="" onclick="story()">
 							<div class="verified"><img src="assets/images/myimages/channels/verified.png" class=""></div>
-						<div class="story w-100 h-100">
+						<div class="story w-100 h-100" id="story">
 							
 						</div>
 					</a>
 					<a href="#" class="channels-btn me-2">
-						<img src="assets/images/myimages/channels/eurosport.png" class="">
+						<img src="assets/images/myimages/channels/eurosport.png" class="" onclick="story()">
 							<div class="verified"><img src="assets/images/myimages/channels/verified.png" class=""></div>
-						<div class="story w-100 h-100">
+						<div class="story w-100 h-100" id="story">
 							
 						</div>
 					</a>
 					<a href="#" class="channels-btn me-2">
-						<img src="assets/images/myimages/channels/myach.jpeg" class="">
-						<div class="story w-100 h-100">
+						<img src="assets/images/myimages/channels/myach.jpeg" class="" onclick="story()">
+						<div class="story w-100 h-100" id="story">
 							
 						</div>
 					</a>
@@ -373,6 +390,8 @@
 	<script src="assets/js/main-main.js"></script>
  	<script src="assets/js/main.js"></script>
 
+ 	<script src="assets/js//slide-stories.js"></script>
+
  	<script type="text/javascript">
  	jQuery('.sortbydiv').slideToggle( "slow" );
     jQuery('.sortby').on('click', function() {
@@ -404,7 +423,12 @@ return false;
 }
 }
 </script>
-
+<script type="text/javascript">
+	function story() {
+		$('#story_screen').removeClass('d-none');
+		$('body').addClass('ohidden');
+	}
+</script>
 <script src="assets/js/index.umd.min.js"></script>
 <script>
       /* global PullToRefresh */
@@ -474,7 +498,7 @@ function handleTouchMove(evt) {
         if ( yDiff > 0 ) {
             /* left up */
         } else { 
-        	/* left down */
+        	document.getElementById("story_screen").className += " d-none";
             
         }                                                                 
     }
@@ -484,5 +508,28 @@ function handleTouchMove(evt) {
 };
     </script>
   </body>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CE7DC2JW&placement=wwwcssscriptcom";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
 </html>
