@@ -1,19 +1,24 @@
 .slide img {
-  max-width: 100%;
-  display: block;
+  background-position: center;
+  background-size: cover;
 }
 .slide {
   max-width: 380px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: grid;
-  border-radius: 10px;
+  height: calc(100vh - 100px);
+  border-radius: 15px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 .slide-items {
   position: relative;
   grid-area: 1/1;
-  border-radius: 10px;
+  border-radius: 15px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   overflow: hidden;
 }
 
