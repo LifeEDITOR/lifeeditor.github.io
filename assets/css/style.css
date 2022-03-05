@@ -9,6 +9,7 @@
   background: transparent;
   display: grid;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .slide-items {
