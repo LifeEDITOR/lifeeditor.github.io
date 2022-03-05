@@ -24,6 +24,7 @@
     		padding-top: 75px;
     	}
     </style>
+
   </head>
   <body class="" >
   	<!-- oncontextmenu="return false;" -->
@@ -63,7 +64,7 @@
     </h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id="close_story"></button>
   </div>
-  <div class="offcanvas-body px-2">
+  <div class="offcanvas-body px-2" id="slider">
     
 <div data-slide="slide" class="slide " >
     <div class="slide-items">
@@ -92,7 +93,7 @@
 		</div>	
 	</div>
 	</div>
-	<h6 class="text-center pt-2" onclick="document.getElementById('close_story').click()"><i class="lni lni-chevron-up"></i></h6>
+	<h6 class="text-center pt-2" id="hidestory" onclick="document.getElementById('close_story').click()"><i class="lni lni-chevron-up"></i></h6>
   </div>
 </div>
 <div class="slider-active">
@@ -529,6 +530,7 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 };
     </script>
+
   </body>
 <script>
 try {
@@ -553,5 +555,24 @@ try {
   ga('create', 'UA-46156385-1', 'cssscript.com');
   ga('send', 'pageview');
 
+</script>
+<script type="text/javascript">
+	let touchstartY = 0
+let touchendY = 0
+
+const slider = document.getElementById('slider')
+
+function handleGesture() {
+  if (touchendY < touchstartY) document.getElementById('close_story').click()
+}
+
+slider.addEventListener('touchstart', e => {
+  touchstartY = e.changedTouches[0].screenY
+})
+
+slider.addEventListener('touchend', e => {
+  touchendY = e.changedTouches[0].screenY
+  handleGesture()
+})
 </script>
 </html>
